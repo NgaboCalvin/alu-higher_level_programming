@@ -21,6 +21,16 @@ Python module imports, `sys.argv` handling, and guarded execution with
 | `4-hidden_discovery.py` | Print the public names defined in `hidden_4.pyc` |
 | `5-variable_load.py` | Import `a` from `variable_load_5.py` and print it |
 
+## Advanced tasks
+
+| File | Description |
+| --- | --- |
+| `100-my_calculator.py` | Command-line calculator handling `+ - * /` |
+| `101-easy_print.py` | Print `#pythoniscool` in at most 2 lines |
+| `102-magic_calculation.py` | Reconstruct `magic_calculation` from bytecode |
+| `103-fast_alphabet.py` | Print the uppercase alphabet in at most 3 lines |
+| `magic_calculation_102.py` | Helper module supplying `add`/`sub` to task 102 |
+
 ## Provided files
 
 These are given by the task and must not be modified:
@@ -44,6 +54,17 @@ These are given by the task and must not be modified:
   that version; a 3.9+ interpreter rejects the bytecode magic number.
 - Task 3 uses `int()` and `sum()` rather than `eval()` so that arbitrarily
   large integers are handled correctly.
+
+## Advanced constraint notes
+
+- `100-my_calculator.py` exits with status 1 on a wrong argument count or an
+  unknown operator, and 0 on success.
+- `101-easy_print.py` may not use `print`, `eval`, `open` or `import sys`, so it
+  writes straight to file descriptor 1 via `os.write`.
+- `102-magic_calculation.py` matches the given bytecode: when `a < b` it returns
+  `add(a, b)` accumulated over `range(4, 6)`, otherwise `sub(a, b)`.
+- `103-fast_alphabet.py` avoids loops, conditionals, `str.join()`, string
+  literals and system calls by using the `string.ascii_uppercase` constant.
 
 ## Usage
 
