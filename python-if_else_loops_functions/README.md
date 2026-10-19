@@ -28,6 +28,15 @@ function definitions with scope and return values.
 | `11-pow.py` | `pow(a, b)` returns `a ** b` |
 | `12-fizzbuzz.py` | `fizzbuzz()` prints 1 to 100 applying FizzBuzz rules |
 
+## Advanced tasks
+
+| File | Description |
+| --- | --- |
+| `100-print_tebahpla.py` | Print the alphabet reversed, alternating lower/upper case |
+| `101-remove_char_at.py` | `remove_char_at(str, n)` copies the string minus the char at index `n` |
+| `102-magic_calculation.py` | `magic_calculation(a, b, c)` reconstructed from bytecode |
+| `101-main.py` | Test harness for task 101 |
+
 ## Constraint notes
 
 - Tasks 2-6 allow at most one loop, one `print` call with string formatting,
@@ -36,6 +45,17 @@ function definitions with scope and return values.
   forbid `str.upper()` / `str.isupper()`, so `ord()` is used instead.
 - Negative last digits keep their sign in task 1 (`-626` prints `-6`), which is
   why `number % 10` alone is not enough in Python.
+
+### Advanced constraint notes
+
+- `100-print_tebahpla.py` uses one loop and one `print` with a string format, no
+  imports, and no variable holding a character. Odd ASCII codes are shifted by
+  32 to alternate `z Y x W ...`.
+- `101-remove_char_at.py` treats `n` as a C array index, so out-of-range values
+  such as `remove_char_at("School", 10)` or `("Python", -2)` simply copy the
+  whole string instead of raising `IndexError`.
+- `102-magic_calculation.py` mirrors the bytecode exactly: return `c` when
+  `a < b`, else `a + b` when `c > b`, else `(a * b) - c`.
 
 ## Test harnesses
 
