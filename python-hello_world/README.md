@@ -23,6 +23,25 @@ First steps with Python (Holberton School higher level programming).
 | `8-concat_edges.py` | Concatenate variables to print "object-oriented programming with Python" |
 | `9-easter_egg.py` | Print "The Zen of Python", by Tim Peters |
 
+## Advanced tasks
+
+| File | Description |
+| --- | --- |
+| `100-write.py` | Write the Dora Korpar quote to stderr and exit 1 |
+| `101-compile` | Compile `$PYFILE` into `$PYFILEc` |
+| `102-magic_calculation.py` | `magic_calculation(a, b)` returns `98 + a ** b` |
+
+### Advanced constraint notes
+
+- `100-write.py` must not use `print`; it uses `sys.stderr.write` so the text
+  lands on stderr (redirectable with `2> file`) and calls `sys.exit(1)`.
+- `101-compile` prints `Compiling $PYFILE ...` and passes an explicit `cfile` of
+  `$PYFILE + 'c'` to `py_compile.compile`, since the default would place the
+  bytecode in a `__pycache__` directory instead of beside the source.
+- `102-magic_calculation.py` mirrors the given bytecode exactly:
+  `LOAD_CONST 98`, `LOAD_FAST a`, `LOAD_FAST b`, `BINARY_POWER`, `BINARY_ADD`,
+  `RETURN_VALUE`.
+
 ## Usage
 
 ```console
